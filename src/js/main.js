@@ -124,13 +124,13 @@ console.assert(cat.growl() === "meow");
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 class KeepSecret {
 
-	constructor (secret) {
-	}
+  constructor(secret){
+    this.secret = secret;
+  }
 
-	squeal() {
-		return mySecret
-
-	}
+  squeal () {
+    return this.secret;
+  }
 }
 
 	console.log(KeepSecret)
@@ -161,20 +161,21 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 class Key {
+}
 
-};
+class Safe{
+  constructor(data, key2){
+    this.data = data
+    this.key2 = key2
+  }
 
-class Safe {
-	constructor (password  ) {
+  unlock(key){
+    if (key === this.key2) {
+      return this.data
+    }
+  }
 
-	}
-
-	unlock (key){}
-};
-
-let myPassword = "secretPassword";
-
-let key = new Key 
+}
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
